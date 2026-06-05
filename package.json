@@ -1,17 +1,17 @@
 {
-  "name": "testing_proyect",
+  "name": "myapp",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1",
-    "nodemon": "^3.1.14"
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^10.4.1"
   }
 }
