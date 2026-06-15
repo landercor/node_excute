@@ -1,0 +1,22 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "tyoe": "module",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+
+  "devDependencies": {
+    "standard": "17.1.2",
+    "eslint": "^10.4.1",
+    "express": "^5.2.1"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
