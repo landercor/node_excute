@@ -85,7 +85,7 @@ export class UserRepository { //metodos
 //password
         Validation.password(password)
 //document        
-        Validation.document(document, documentType)
+        Validation.document(document)
         // search for username in that case not exist    
     
     const existingDocument = User.findOne({ //carefull with nomenglatures
@@ -120,7 +120,7 @@ export class UserRepository { //metodos
 //password
     Validation.password(password)
 //document
-    Validation.document(document, documentType)
+    Validation.document(document)
 
     const user = User.findOne({username})
         if ( !user ) throw new Error('username does not exists')
@@ -150,21 +150,19 @@ class Validation { // se puede crear una clase con las validaciones y estas vali
         if(password.length < 6 ) 
             throw new Error('password must be at last 6 characters long')
     }
-    static document (document, documentType, existingDocument) {
-        if(typeof document !== 'string')
-            throw new Error('documento must be a string')
-        if(document.length < 12)
-            throw new Error('document mus be a at last 8 at 12 character long')
-
+    static document (document) {
         if(!Object.keys(documentTypes)
             .includes(documentType)
         ){
-            console.log(documentType)
-                console.log(Object.keys(documentTypes))
             throw new Error('invalid document type')
         }
+        if(typeof document !== 'string')
+            throw new Error('documento must be a string')
+
         if (existingDocument){
             throw new Error('document already exists')
-        }
+    }
+        if(document.length < 12)
+            throw new Error('document mus be a at last 8 at 12 character long')
     }
 }    

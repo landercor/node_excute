@@ -150,21 +150,19 @@ class Validation { // se puede crear una clase con las validaciones y estas vali
         if(password.length < 6 ) 
             throw new Error('password must be at last 6 characters long')
     }
-    static document (document, documentType, existingDocument) {
-        if(typeof document !== 'string')
-            throw new Error('documento must be a string')
-        if(document.length < 12)
-            throw new Error('document mus be a at last 8 at 12 character long')
-
-        if(!Object.keys(documentTypes)
+    static document (document, documentType) {
+        if(!Object.keys(documentType)
             .includes(documentType)
         ){
-            console.log(documentType)
-                console.log(Object.keys(documentTypes))
             throw new Error('invalid document type')
         }
+        if(typeof document !== 'string')
+            throw new Error('documento must be a string')
+
         if (existingDocument){
             throw new Error('document already exists')
-        }
+    }
+        if(document.length < 12)
+            throw new Error('document mus be a at last 8 at 12 character long')
     }
 }    

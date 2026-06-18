@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/login', async (req, res) =>{
-    const { username, password, document, documentType } = req.body
+    const { username, password, document, documentTypes } = req.body
     try {
-        const user = await UserRepository.login({ username, password, document, documentTypes})
+        const user = await UserRepository.login({ username, password, document, documentType})
         res.send({ user })
     }catch (error) {
         res.status(401).send(error.message)
@@ -26,7 +26,7 @@ app.post('/login', async (req, res) =>{
 app.post('/register', async (req, res) => {
     console.log(req.body)
 
-    const { username, password, document, documentType } = req.body // <= ojo que es el cuerpo de la paticion (express no tramitaa el cuerpo del formulario.)e
+    const { username, password, document, documentTypes } = req.body // <= ojo que es el cuerpo de la paticion (express no tramitaa el cuerpo del formulario.)e
     try { // los metodos y propiedades estaticas podemo utilizarlas sin necesidad de crear una instancia dela clase.
 
         const id = await UserRepository.create({

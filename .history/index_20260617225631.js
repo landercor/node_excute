@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.post('/login', async (req, res) =>{
     const { username, password, document, documentType } = req.body
     try {
-        const user = await UserRepository.login({ username, password, document, documentTypes})
+        const user = await UserRepository.login({ username, password, document, documentType})
         res.send({ user })
     }catch (error) {
         res.status(401).send(error.message)

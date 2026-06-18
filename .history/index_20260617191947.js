@@ -14,16 +14,10 @@ app.get('/', (req, res) => {
     res.send('<h1>algo que pueda probar</h1>')  /*Raiz del proyecto*/
 })
 
-app.post('/login', async (req, res) =>{
-    const { username, password, document, documentType } = req.body
-    try {
-        const user = await UserRepository.login({ username, password, document, documentTypes})
-        res.send({ user })
-    }catch (error) {
-        res.status(401).send(error.message)
-    }
+app.post('/login', (req, res) =>{
+    
 })
-app.post('/register', async (req, res) => {
+app.post('/register',  async (req, res) => {
     console.log(req.body)
 
     const { username, password, document, documentType } = req.body // <= ojo que es el cuerpo de la paticion (express no tramitaa el cuerpo del formulario.)e
@@ -35,7 +29,6 @@ app.post('/register', async (req, res) => {
             password,
             documentType,
             document,
-
             
         })
 

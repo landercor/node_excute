@@ -156,11 +156,9 @@ class Validation { // se puede crear una clase con las validaciones y estas vali
         if(document.length < 12)
             throw new Error('document mus be a at last 8 at 12 character long')
 
-        if(!Object.keys(documentTypes)
+        if(!Object.keys(documentType)
             .includes(documentType)
         ){
-            console.log(documentType)
-                console.log(Object.keys(documentTypes))
             throw new Error('invalid document type')
         }
         if (existingDocument){

@@ -6,7 +6,7 @@ import { hashSync } from 'bcrypt'
 const app = express()
 
 /*middleware */
-app.use(express.json()) //metodo para interceptar las peticiones para hacer un tipo de modificacion o validacion 
+app.use(express.json()) //metodo para interceptar las peticiones parahacer un tipo de modificacion o validacion 
 /*this funtion coonvert the text to Json to transform it into the req.body 
 type so that it's beging read for the body*/
 
@@ -14,19 +14,13 @@ app.get('/', (req, res) => {
     res.send('<h1>algo que pueda probar</h1>')  /*Raiz del proyecto*/
 })
 
-app.post('/login', async (req, res) =>{
-    const { username, password, document, documentType } = req.body
-    try {
-        const user = await UserRepository.login({ username, password, document, documentTypes})
-        res.send({ user })
-    }catch (error) {
-        res.status(401).send(error.message)
-    }
+app.post('/login', (req, res) =>{
+    
 })
-app.post('/register', async (req, res) => {
+app.post('/register',  async (req, res) => {
     console.log(req.body)
 
-    const { username, password, document, documentType } = req.body // <= ojo que es el cuerpo de la paticion (express no tramitaa el cuerpo del formulario.)e
+    const { username, password, document, documentType, lastLogin } = req.body // <= ojo que es el cuerpo de la paticion (express no tramitaa el cuerpo del formulario.)e
     try { // los metodos y propiedades estaticas podemo utilizarlas sin necesidad de crear una instancia dela clase.
 
         const id = await UserRepository.create({
@@ -35,7 +29,7 @@ app.post('/register', async (req, res) => {
             password,
             documentType,
             document,
-
+            lastLogin
             
         })
 

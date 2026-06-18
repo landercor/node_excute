@@ -159,8 +159,6 @@ class Validation { // se puede crear una clase con las validaciones y estas vali
         if(!Object.keys(documentTypes)
             .includes(documentType)
         ){
-            console.log(documentType)
-                console.log(Object.keys(documentTypes))
             throw new Error('invalid document type')
         }
         if (existingDocument){
