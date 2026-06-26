@@ -1,7 +1,7 @@
 import  DBlocal from 'db-local'
 import crypto from 'node:crypto'
 import bcrypt from 'bcrypt'
-import { SAlT_ROUNDS } from './config.js'
+import { SAlT_ROUNDS } from './config.txtt'
 import { decrypt } from 'dotenv'
 import { error } from 'node:console'
 
@@ -31,7 +31,7 @@ export const documentTypes = Object.freeze({
     },
 })
 
-/*
+/* example
 export const UserCollection = Schema('User', {
     _id: String,
     name: String,
@@ -134,20 +134,20 @@ export class UserRepository { //metodos
 //Recomendado
 class Validation { // se puede crear una clase con las validaciones y estas validaciones se referenciar al resto de parametros, login, register, ect (tambine se puede crear un archivo y enlazarlo).
     static username (username) {
-        if ( typeof username !== 'string') 
+        if ( typeof username !== 'string')
             throw new Error('username must be a string')
-        if (username.length < 3) 
+        if (username.length < 3)
             throw new Error('usernmae must be at least 3 characters long')
-    /*    
-        const user = await User.findOne({username}) 
+    /*
+        const user = await User.findOne({username})
             if ( user ) throw new Error('username already exists')
             */
     }
     static password (password) {
-        if(typeof password !== 'string') 
+        if(typeof password !== 'string')
             throw new Error('password must be a string')
 
-        if(password.length < 6 ) 
+        if(password.length < 6 )
             throw new Error('password must be at last 6 characters long')
     }
     static document (document, documentType, existingDocument) {
@@ -167,4 +167,4 @@ class Validation { // se puede crear una clase con las validaciones y estas vali
             throw new Error('document already exists')
         }
     }
-}    
+}

@@ -6,8 +6,8 @@ import { hashSync } from 'bcrypt'
 const app = express()
 
 /*middleware */
-app.use(express.json()) //metodo para interceptar las peticiones para hacer un tipo de modificacion o validacion 
-/*this funtion coonvert the text to Json to transform it into the req.body 
+app.use(express.json()) //metodo para interceptar las peticiones para hacer un tipo de modificacion o validacion
+/*this funtion coonvert the text to Json to transform it into the req.body
 type so that it's beging read for the body*/
 
 app.get('/', (req, res) => {
@@ -52,7 +52,7 @@ app.post('/register', async (req, res) => {
 
 app.post ('/logout', (req, res) => {
 
-})  
+})
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
