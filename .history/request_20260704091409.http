@@ -1,0 +1,5 @@
+GET http://localhost:2230/usuarios
+
+###
+
+GET http://localhost:2230/usuarios/1

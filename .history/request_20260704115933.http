@@ -1,0 +1,24 @@
+GET http://localhost:2230/usuarios
+
+###
+
+GET http://localhost:2230/usuarios/2
+
+###
+
+POST http://localhost:2230/usuarios
+Content-type: application/json
+
+{
+    "id": 5,
+    "name": "Catmoon"
+}
+
+###
+
+PUT http://localhost:2230/usuarios/4
+Content-type: application/json
+
+{
+    "name": "CatDat"
+}
