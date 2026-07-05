@@ -2,29 +2,27 @@ GET http://localhost:2030/usuarios
 
 ###
 
-GET http://localhost:2030/usuarios/1
+GET http://localhost:2030/usuarios/5
 
 ###
 
 POST http://localhost:2030/usuarios
 Content-Type: application/json
-
-    
+[
     {
-        "username": "Cattuc",
-        "password": "1DJfuj675434"
+        "id": 5,
+        "name": "sunny"
     }
+]
 
 ###
+
 PUT http://localhost:2030/usuarios/6
 Content-Type: application/json
 
 {
-    "id": 6,
-    "username": "sunset",
-    "password": "Fobayol456(*)"
+    "name": "Sunset"
 }
-
 ###
 
 DELETE http://localhost:2030/usuarios/4 HTTP/1.1
