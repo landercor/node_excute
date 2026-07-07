@@ -5,4 +5,7 @@
 
 # Temp files
 .lh/
-./history
+.history/
+
+#file privated
+.env

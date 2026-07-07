@@ -56,7 +56,7 @@ app.post('/usuarios', (req, res) => { // recueda utilizar las validaciones neces
         return res.status(400).json({ error: 'Nombre de usuario y contraseña son requeridos' });
     }
     if (usuarios.find(u => u.username === req.body.username)) {
-        return res.status(401).json({error: 'this users alredy exist'});
+        return res.status(409).json({error: 'this users alredy exist'});
     }
     
 
