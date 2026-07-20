@@ -1,9 +1,0 @@
-
-
-#Ignore vscode AI rules
-.github\instructions\codacy.instructions.md
-
-# Temp files
-.lh/
-.history/
-.views/
