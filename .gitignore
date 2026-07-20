@@ -9,3 +9,33 @@
 
 #file privated
 .env
+.node_modules/
+.testing_proyect/
+
+#file of test
+config.js
+codeJWT.js
+configJWT.js
+File.js
+index.js
+server.js
+test.js
+userRepository.js
+app.js
+
+#modelJWT
+JWTmodels.js
+nodemodels.js
+
+#routesJWT
+notesRoutes.js
+
+#guides to lern
+COOKIES_GUIA.md
+JWT_GUIA.md
+
+#requests
+request.http
+#db
+User.json
+db.js
